@@ -1,3 +1,4 @@
+#!/home/yehoshua/anaconda3/envs/rl_class/bin/python
 import os
 import time
 
@@ -5,7 +6,6 @@ from cs285.infrastructure.rl_trainer import RL_Trainer
 from cs285.agents.bc_agent import BCAgent
 from cs285.policies.loaded_gaussian_policy import LoadedGaussianPolicy
 from cs285.infrastructure.utils import MJ_ENV_KWARGS, MJ_ENV_NAMES
-
 class BC_Trainer(object):
 
     def __init__(self, params):
@@ -51,7 +51,6 @@ class BC_Trainer(object):
             relabel_with_expert=self.params['do_dagger'],
             expert_policy=self.loaded_expert_policy,
         )
-
 
 def main():
     import argparse
@@ -121,3 +120,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

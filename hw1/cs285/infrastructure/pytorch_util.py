@@ -47,7 +47,15 @@ def build_mlp(
 
     # TODO: return a MLP. This should be an instance of nn.Module
     # Note: nn.Sequential is an instance of nn.Module.
-    raise NotImplementedError
+    mlp = nn.Sequential()
+    layer = nn.Sequential(
+         nn.Linear(size, size),
+            activation)
+    mlp.add_module("input_layer", nn.Sequential(nn.Linear(input_size, size), activation))
+    for i in range(n_layers):
+        mlp.add_module("layer"+str(i), layer) 
+    mlp.add_module("output_layer", nn.Linear(size, output_size))
+    return mlp
 
 
 device = None
@@ -73,3 +81,6 @@ def from_numpy(*args, **kwargs):
 
 def to_numpy(tensor):
     return tensor.to('cpu').detach().numpy()
+
+
+
