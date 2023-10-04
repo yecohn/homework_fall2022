@@ -1,4 +1,3 @@
-#!/home/yehoshua/anaconda3/envs/rl_class/bin/python
 import os
 import time
 
@@ -83,6 +82,7 @@ def main():
     parser.add_argument('--save_params', action='store_true')
     parser.add_argument('--seed', type=int, default=1)
     args = parser.parse_args()
+    import ipdb; ipdb.set_trace()
 
     # convert args to dictionary
     params = vars(args)

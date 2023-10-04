@@ -57,7 +57,7 @@ class MLPPolicy(BasePolicy, nn.Module, metaclass=abc.ABCMeta):
                 output_size=self.ac_dim,
                 n_layers=self.n_layers, size=self.size,
             )
-            self.mean_net.to(ptu.device)
+            self.mean_net.to(ptu.device)           
             self.logstd = nn.Parameter(
                 torch.zeros(self.ac_dim, dtype=torch.float32, device=ptu.device)
             )
